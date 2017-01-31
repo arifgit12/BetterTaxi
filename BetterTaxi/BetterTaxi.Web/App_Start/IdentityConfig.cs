@@ -31,6 +31,21 @@ namespace BetterTaxi.Web
         }
     }
 
+    public class ApplicationRoleManager : RoleManager<IdentityRole>
+    {
+        public ApplicationRoleManager(IRoleStore<IdentityRole, string> roleStore)
+            : base(roleStore) { }
+
+        public static ApplicationRoleManager Create(
+            IdentityFactoryOptions<ApplicationRoleManager> options,
+            IOwinContext context)
+        {
+            var manager = new ApplicationRoleManager(
+                new RoleStore<IdentityRole>(context.Get<TaxiDbContext>()));
+            return manager;
+        }
+    }
+
     // Configure the application user manager used in this application. UserManager is defined in ASP.NET Identity and is used by the application.
     public class ApplicationUserManager : UserManager<ApplicationUser>
     {
