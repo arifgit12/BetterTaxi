@@ -24,7 +24,7 @@ namespace BetterTaxi.Data
     public class TaxiDbContext : IdentityDbContext<ApplicationUser>, ITaxiDbContext
     {
         public TaxiDbContext()
-            : base("BetterTaxiDbContext")
+            : base("BetterTaxiDbConnection")
         {
             //Database.SetInitializer(new MigrateDatabaseToLatestVersion<TaxiDbContext, Configuration>());
         }

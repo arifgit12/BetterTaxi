@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetterTaxi.Models", "Better
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetterTaxi.Data", "BetterTaxi.Data\BetterTaxi.Data.csproj", "{4717A660-2991-4116-A04D-F26EE1F49EC1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetterTaxi.Web", "BetterTaxi.Web\BetterTaxi.Web.csproj", "{25023CA1-1142-4C61-A6F2-D35F3F1967E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BetterTaxi.Web.Tests", "BetterTaxi.Web.Tests\BetterTaxi.Web.Tests.csproj", "{FB0C6FCD-50AF-426C-ADFD-60D736AF4929}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{4717A660-2991-4116-A04D-F26EE1F49EC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4717A660-2991-4116-A04D-F26EE1F49EC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4717A660-2991-4116-A04D-F26EE1F49EC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25023CA1-1142-4C61-A6F2-D35F3F1967E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25023CA1-1142-4C61-A6F2-D35F3F1967E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25023CA1-1142-4C61-A6F2-D35F3F1967E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25023CA1-1142-4C61-A6F2-D35F3F1967E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB0C6FCD-50AF-426C-ADFD-60D736AF4929}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB0C6FCD-50AF-426C-ADFD-60D736AF4929}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB0C6FCD-50AF-426C-ADFD-60D736AF4929}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB0C6FCD-50AF-426C-ADFD-60D736AF4929}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
