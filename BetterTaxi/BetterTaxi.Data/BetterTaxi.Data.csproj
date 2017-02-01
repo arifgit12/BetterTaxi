@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="TaxiData.cs" />
     <Compile Include="TaxiDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
