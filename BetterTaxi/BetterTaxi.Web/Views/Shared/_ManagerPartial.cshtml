@@ -1,0 +1,8 @@
+﻿@using Microsoft.AspNet.Identity
+@using BetterTaxi.Models
+@if (Request.IsAuthenticated && User.IsInRole(UserRoles.Manager.ToString()))
+{
+    <ul class="nav navbar-nav">
+        <li>@Html.ActionLink("Manager", "Index", "Main", new { area = "Management" }, htmlAttributes: new { id = "managerLink" })</li>
+    </ul>
+}

@@ -220,9 +220,12 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
     <Compile Include="Areas\Administration\Controllers\RolesController.cs" />
+    <Compile Include="Areas\Administration\ViewModels\RolesAdministrationVM.cs" />
+    <Compile Include="Areas\Administration\ViewModels\RolesEditVM.cs" />
     <Compile Include="Areas\Management\Controllers\TaxiesController.cs" />
     <Compile Include="Areas\Management\ManagementAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -231,14 +234,22 @@
     <Compile Include="Infrastructure\Authorization\AuthorizeRolesAttribute.cs" />
     <Compile Include="Infrastructure\Caching\ICacheService.cs" />
     <Compile Include="Infrastructure\Caching\InMemoryCache.cs" />
+    <Compile Include="Infrastructure\Mapping\AutoMapperConfiguration.cs" />
     <Compile Include="Infrastructure\Populators\DropDownListPopulator.cs" />
     <Compile Include="Infrastructure\Populators\IDropDownListPopulator.cs" />
     <Compile Include="Infrastructure\Providers\ApplicationOAuthProvider.cs" />
+    <Compile Include="Infrastructure\Services\AccountService.cs" />
+    <Compile Include="Infrastructure\Services\Base\BaseService.cs" />
+    <Compile Include="Infrastructure\Services\Contracts\IAccountService.cs" />
+    <Compile Include="Infrastructure\Services\Contracts\ITaxiService.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\UserItemViewModel.cs" />
+    <Compile Include="ViewModels\UserSearchVM.cs" />
+    <Compile Include="ViewModels\UserVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\animate.css" />
@@ -283,6 +294,16 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Areas\Administration\Views\web.config" />
     <Content Include="Areas\Management\Views\web.config" />
+    <Content Include="Areas\Administration\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Administration\Views\Roles\Index.cshtml" />
+    <Content Include="Areas\Management\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Management\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Management\Views\Taxies\Index.cshtml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -295,6 +316,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
@@ -335,22 +357,19 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_AdminPartial.cshtml" />
+    <Content Include="Views\Shared\_ManagerPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Administration\Models\" />
-    <Folder Include="Areas\Administration\Views\Roles\" />
-    <Folder Include="Areas\Administration\Views\Shared\" />
     <Folder Include="Areas\Management\Models\" />
-    <Folder Include="Areas\Management\Views\Shared\" />
-    <Folder Include="Areas\Management\Views\Taxies\" />
     <Folder Include="Infrastructure\Bridges\" />
     <Folder Include="Infrastructure\LocalResource\" />
-    <Folder Include="Infrastructure\Mapping\" />
     <Folder Include="Infrastructure\ModelBinders\" />
     <Folder Include="Infrastructure\Security\" />
-    <Folder Include="Infrastructure\Services\" />
-    <Folder Include="ViewModels\" />
+    <Folder Include="Infrastructure\Services\HubServices\" />
+    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

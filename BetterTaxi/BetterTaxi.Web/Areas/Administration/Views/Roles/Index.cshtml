@@ -1,0 +1,38 @@
+﻿@model BetterTaxi.Web.Areas.Administration.ViewModels.RolesAdministrationVM
+@{
+    ViewBag.Title = "Index";
+    List<SelectListItem> userRoles = (List<SelectListItem>)ViewBag.UserRoles;
+}
+
+<div class="row">
+    <h3>List of Roles</h3>
+</div>
+<div class="row">
+    <table class="table table-striped">
+        <tr>
+            <th>&nbsp;</th>
+            <th>@Html.LabelFor(m => m.Accounts.First().Roles)</th>
+            <th>@Html.LabelFor(m => m.Accounts.First().FullName)</th>
+            <th>@Html.LabelFor(m => m.Accounts.First().PhoneNumber)</th>
+            <th>@Html.LabelFor(m => m.Accounts.First().Email)</th>
+        </tr>
+        @foreach (var user in Model.Accounts)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => user.Roles)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => user.FullName)
+                </td>                
+                <td>
+                    @Html.DisplayFor(model => user.PhoneNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => user.Email)
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+

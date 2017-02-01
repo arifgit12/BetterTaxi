@@ -10,6 +10,14 @@ namespace BetterTaxi.Web.App_Start
 
     using Ninject;
     using Ninject.Web.Common;
+    using Data;
+    using Infrastructure.Caching;
+    using Infrastructure.Populators;
+    using Ninject.Activation;
+    using BetterTaxi.Models;
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
+    using Microsoft.AspNet.Identity.Owin;
 
     public static class NinjectWebCommon 
     {
@@ -61,6 +69,23 @@ namespace BetterTaxi.Web.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-        }        
+            kernel.Bind<IUserStore<ApplicationUser>>().To<UserStore<ApplicationUser>>();
+            kernel.Bind<UserManager<ApplicationUser>>().ToSelf();
+
+            kernel.Bind<ApplicationUserManager>().ToMethod(GetOwinInjection<ApplicationUserManager>);
+            kernel.Bind<ApplicationSignInManager>().ToMethod(GetOwinInjection<ApplicationSignInManager>);
+            kernel.Bind<ApplicationRoleManager>().ToMethod(GetOwinInjection<ApplicationRoleManager>);
+
+            kernel.Bind<ITaxiData>().To<TaxiData>();
+
+            kernel.Bind<ICacheService>().To<InMemoryCache>();
+            kernel.Bind<IDropDownListPopulator>().To<DropDownListPopulator>();
+        }
+
+        private static T GetOwinInjection<T>(IContext context) where T : class
+        {
+            var contextBase = new HttpContextWrapper(HttpContext.Current);
+            return contextBase.GetOwinContext().Get<T>();
+        }
     }
 }
