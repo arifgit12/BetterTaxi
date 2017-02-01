@@ -252,6 +252,8 @@
     <Compile Include="ViewModels\UserVM.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\ace-rtl.min.css" />
+    <Content Include="Content\ace.min.css" />
     <Content Include="Content\animate.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -259,23 +261,24 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\form-elements.css" />
     <Content Include="Content\img\about\1.jpg" />
+    <Content Include="Content\img\alpha.png" />
     <Content Include="Content\img\backgrounds\1%402x.jpg" />
     <Content Include="Content\img\backgrounds\1.jpg" />
     <Content Include="Content\img\backgrounds\2%402x.jpg" />
     <Content Include="Content\img\backgrounds\2.jpg" />
     <Content Include="Content\img\backgrounds\3%402x.jpg" />
     <Content Include="Content\img\backgrounds\3.jpg" />
-    <Content Include="Content\img\ebook\ebook%402x.png" />
-    <Content Include="Content\img\ebook\ebook.png" />
-    <Content Include="Content\img\ebook\ebook2%402x.png" />
-    <Content Include="Content\img\ebook\ebook2.png" />
+    <Content Include="Content\img\border.png" />
+    <Content Include="Content\img\controls.png" />
+    <Content Include="Content\img\hue.png" />
     <Content Include="Content\img\loading.gif" />
+    <Content Include="Content\img\loading_background.png" />
     <Content Include="Content\img\logo%402x.png" />
     <Content Include="Content\img\logo.png" />
-    <Content Include="Content\img\testimonials\1.jpg" />
-    <Content Include="Content\img\testimonials\2.jpg" />
-    <Content Include="Content\img\testimonials\3.jpg" />
-    <Content Include="Content\img\testimonials\4.jpg" />
+    <Content Include="Content\img\meteorshower2.jpg" />
+    <Content Include="Content\img\overlay.png" />
+    <Content Include="Content\img\pattern.jpg" />
+    <Content Include="Content\img\saturation.png" />
     <Content Include="Content\media-queries.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -301,6 +304,11 @@
     <Content Include="Areas\Management\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Management\Views\Taxies\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\ace-editable.min.js" />
+    <Content Include="Scripts\ace-elements.min.js" />
+    <Content Include="Scripts\ace-extra.min.js" />
+    <Content Include="Scripts\ace.min.js" />
+    <Content Include="Scripts\additional-methods.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
