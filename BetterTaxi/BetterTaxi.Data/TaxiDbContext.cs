@@ -1,4 +1,5 @@
-﻿using BetterTaxi.Models;
+﻿using BetterTaxi.Data.Migrations;
+using BetterTaxi.Models;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
@@ -26,7 +27,7 @@ namespace BetterTaxi.Data
         public TaxiDbContext()
             : base("BetterTaxiDbConnection")
         {
-            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<TaxiDbContext, Configuration>());
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<TaxiDbContext, Configuration>());
         }
 
         public static TaxiDbContext Create()
