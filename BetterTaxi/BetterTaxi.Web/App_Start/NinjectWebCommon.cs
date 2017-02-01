@@ -10,6 +10,9 @@ namespace BetterTaxi.Web.App_Start
 
     using Ninject;
     using Ninject.Web.Common;
+    using Data;
+    using Infrastructure.Caching;
+    using Infrastructure.Populators;
 
     public static class NinjectWebCommon 
     {
@@ -61,7 +64,10 @@ namespace BetterTaxi.Web.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            kernel.Bind<ITaxiData>().To<TaxiData>();
 
+            kernel.Bind<ICacheService>().To<InMemoryCache>();
+            kernel.Bind<IDropDownListPopulator>().To<DropDownListPopulator>();
         }        
     }
 }
