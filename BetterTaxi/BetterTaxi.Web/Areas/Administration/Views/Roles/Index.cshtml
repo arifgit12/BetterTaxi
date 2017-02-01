@@ -7,10 +7,6 @@
 <div class="page-header">
     <h1>
         User Roles
-        <small>
-            <i class="ace-icon fa fa-angle-double-right"></i>
-            Static &amp; Dynamic Tables
-        </small>
     </h1>
 </div>
 
@@ -18,16 +14,30 @@
     <div class="col-xs-12">
         <table class="table  table-striped table-bordered table-hover">
             <tr>
+                <th>&nbsp;</th>
                 <th>@Html.LabelFor(m => m.Accounts.First().Roles)</th>
                 <th>@Html.LabelFor(m => m.Accounts.First().FullName)</th>
                 <th>@Html.LabelFor(m => m.Accounts.First().PhoneNumber)</th>
                 <th>@Html.LabelFor(m => m.Accounts.First().Email)</th>
             </tr>
+            @{
+                var count = 1;
+            }
             @foreach (var user in Model.Accounts)
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(model => user.Roles)
+                        @count
+                    </td>
+                    <td>
+                        @{
+
+                            foreach (var roleid in user.Roles)
+                            {
+                                var roleLabelText = userRoles.Find(m => m.Value == roleid);
+                                @roleLabelText.Text<br />
+                            }
+                        }
                     </td>
                     <td>
                         @Html.DisplayFor(model => user.FullName)
@@ -39,6 +49,7 @@
                         @Html.DisplayFor(model => user.Email)
                     </td>
                 </tr>
+                count++;
             }
         </table>
     </div>   
