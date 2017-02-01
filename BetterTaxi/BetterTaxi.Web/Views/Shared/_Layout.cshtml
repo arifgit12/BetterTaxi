@@ -8,7 +8,7 @@
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
-<body>
+<body class="no-skin">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -20,23 +20,36 @@
                 @Html.ActionLink("Better Taxi", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_AdminPartial")
-                @Html.Partial("_ManagerPartial")
+                @Html.Partial("_HeaderPartial")
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Better Taxi Application</p>
-        </footer>
+    <div class="main-container" id="main-container">
+        <script type="text/javascript">
+				try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+        </script>
+        @Html.Partial("_AdminSidebarPartial")
+
+        <div class="main-content">
+            <div class="main-content-inner">
+                @Html.Partial("_BreadcrumbPartial")
+
+                <div class="page-content">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+       <div class="footer">
+           <div class="footer-inner">
+               <div class="footer-content">
+                   <span class="bigger-120">
+                       <span class="blue bolder">Better Taxi Application</span>
+                       &copy; @DateTime.Now.Year
+                   </span>
+               </div>
+            </div>
+       </div>
     </div>
 
     @Scripts.Render("~/bundles/jquery")

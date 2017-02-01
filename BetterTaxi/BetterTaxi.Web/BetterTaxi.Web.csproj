@@ -367,6 +367,9 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_AdminPartial.cshtml" />
     <Content Include="Views\Shared\_ManagerPartial.cshtml" />
+    <Content Include="Views\Shared\_AdminSidebarPartial.cshtml" />
+    <Content Include="Views\Shared\_BreadcrumbPartial.cshtml" />
+    <Content Include="Views\Shared\_HeaderPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
